@@ -1,13 +1,16 @@
+import React from 'react';
+
 interface ButtonProps {
     title: string;
+    cb?: (e: React.MouseEvent) => void;
 }
 
 export const Button = (props: ButtonProps) => {
-    const { title } = props;
+    const { title, cb } = props;
 
     return (
-        <div className={`${title}-button`}>
+        <button className={`${title}-button`} onClick={cb}>
            {title}
-        </div>
+        </button>
     );
 }
